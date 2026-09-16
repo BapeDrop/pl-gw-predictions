@@ -11,3 +11,8 @@ then republish `~/pl-gw-predictions/gw-predictions.html` to the artifact URL abo
 
 Scoring: exact score 3, correct result 1, player pick = that player's FPL points in the gameweek.
 Predictions and picks live in the artifact's db (collection `gameweeks`, docs `gw4`, `gw5`, ...).
+
+## Automation
+Cloud routine "PL predictions tracker refresh" (trig_01DD82AtyGzTbLsYnopX3DmG) runs Tue + Fri 11:00 UTC:
+clones this repo, runs build.py, republishes to the artifact URL above. Manage at https://claude.ai/code/routines
+The repo is public so the routine can clone it without a GitHub connection on claude.ai.
