@@ -2,7 +2,7 @@ name: Build predictions page
 
 on:
   schedule:
-    - cron: "0 10 * * 2,5"   # Tue + Fri 10:00 UTC, an hour before the claude.ai routine publishes
+    - cron: "0 2 * * 2,5"    # Tue + Fri 02:00 UTC. GitHub starts scheduled runs 4-7h late, so this lands well before the 11:00 UTC claude.ai publish
   workflow_dispatch:
 
 permissions:

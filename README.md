@@ -14,7 +14,8 @@ Predictions and picks live in the artifact's db (collection `gameweeks`, docs `g
 
 ## Automation
 Two-step, because the claude.ai cloud sandbox cannot reach fantasy.premierleague.com:
-1. GitHub Actions (`.github/workflows/build.yml`) runs build.py Tue + Fri 10:00 UTC and commits gw-predictions.html.
+1. GitHub Actions (`.github/workflows/build.yml`) runs build.py Tue + Fri 02:00 UTC and commits gw-predictions.html.
+   (Scheduled at 02:00 because GitHub starts cron runs 4-7h late; at 10:00 the build landed after the publish step.)
 2. Cloud routine "PL predictions tracker refresh" (trig_01DD82AtyGzTbLsYnopX3DmG) runs Tue + Fri 11:00 UTC:
    clones this repo and republishes the committed gw-predictions.html to the artifact URL above.
    Manage at https://claude.ai/code/routines
